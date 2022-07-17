@@ -1,0 +1,11 @@
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+CREATE TABLE IF NOT EXISTS images (
+    id UUID NOT NULL DEFAULT uuid_generate_v4(),
+    master_image VARCHAR(255) NOT NULL,
+    resized_image_300 VARCHAR(255) NULL,
+    resized_image_600 VARCHAR(255) NULL,
+    createdOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updatedOn TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
